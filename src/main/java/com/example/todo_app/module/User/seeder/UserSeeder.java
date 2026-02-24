@@ -6,6 +6,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.CommandLineRunner;
+import org.springframework.core.annotation.Order;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Component;
 
@@ -18,6 +19,7 @@ import java.util.List;
  * Password được hash bằng BCrypt để sẵn sàng tích hợp JWT
  */
 @Component
+@Order(1)  // Chạy trước để Task có thể reference User
 public class UserSeeder implements CommandLineRunner {
 
     private static final Logger logger = LoggerFactory.getLogger(UserSeeder.class);
