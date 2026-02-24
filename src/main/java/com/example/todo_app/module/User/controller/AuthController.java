@@ -12,6 +12,8 @@ import org.springframework.security.authentication.UsernamePasswordAuthenticatio
 import org.springframework.security.core.Authentication;
 import org.springframework.security.oauth2.jwt.JwtClaimsSet;
 import org.springframework.security.oauth2.jwt.JwtEncoderParameters;
+import com.example.todo_app.module.User.model.User;
+import com.example.todo_app.module.User.repository.UserRepositories;
 import java.time.Instant;
 
 @RestController
@@ -19,10 +21,12 @@ import java.time.Instant;
 public class AuthController {
     private final AuthenticationManager authenticationManager;
     private final JwtEncoder jwtEncoder;
+    private final UserRepositories userRepositories;
 
-    public AuthController(AuthenticationManager authenticationManager, JwtEncoder jwtEncoder) {
+    public AuthController(AuthenticationManager authenticationManager, JwtEncoder jwtEncoder, UserRepositories userRepositories) {
         this.authenticationManager = authenticationManager;
         this.jwtEncoder = jwtEncoder;
+        this.userRepositories = userRepositories;
     }
 
     public record LoginRequest(String username, String password) {
@@ -36,9 +40,13 @@ public class AuthController {
                 new UsernamePasswordAuthenticationToken(request.username(), request.password())
         );
 
+        User user = userRepositories.findByUsername(authentication.getName())
+                .orElseThrow(() -> new RuntimeException("User not found"));
+
         JwsHeader jwsHeader = JwsHeader.with(MacAlgorithm.HS256).build();
         JwtClaimsSet claims = JwtClaimsSet.builder()
                 .subject(authentication.getName())
+                .claim("userId", user.getId())
                 .issuedAt(Instant.now())
                 .expiresAt(Instant.now().plusSeconds(3600))
                 .build();
