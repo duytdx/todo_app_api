@@ -1,0 +1,80 @@
+2026-02-24T10:57:29.722+07:00  INFO 9624 --- [todo_app] [main] c.example.todo_app.TodoAppApplication    : Starting TodoAppApplication using Java 17.0.12 with PID 9624 (C:\My Project\java\todo_app\target\classes started by Digidinos in C:\My Project\java\todo_app)
+2026-02-24T10:57:29.729+07:00  INFO 9624 --- [todo_app] [main] c.example.todo_app.TodoAppApplication    : No active profile set, falling back to 1 default profile: "default"
+2026-02-24T10:57:30.945+07:00  INFO 9624 --- [todo_app] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-02-24T10:57:31.077+07:00  INFO 9624 --- [todo_app] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 112 ms. Found 2 JPA repository interfaces.
+2026-02-24T10:57:32.258+07:00  INFO 9624 --- [todo_app] [main] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 8080 (http)
+2026-02-24T10:57:32.286+07:00  INFO 9624 --- [todo_app] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-02-24T10:57:32.288+07:00  INFO 9624 --- [todo_app] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.18]
+2026-02-24T10:57:32.419+07:00  INFO 9624 --- [todo_app] [main] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 2590 ms
+2026-02-24T10:57:32.731+07:00  INFO 9624 --- [todo_app] [main] org.hibernate.orm.jpa                    : HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-02-24T10:57:32.838+07:00  INFO 9624 --- [todo_app] [main] org.hibernate.orm.core                   : HHH000001: Hibernate ORM core version 7.2.4.Final
+2026-02-24T10:57:33.685+07:00  INFO 9624 --- [todo_app] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-02-24T10:57:33.740+07:00  INFO 9624 --- [todo_app] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-02-24T10:57:34.286+07:00  INFO 9624 --- [todo_app] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@6b289535
+2026-02-24T10:57:34.291+07:00  INFO 9624 --- [todo_app] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-02-24T10:57:34.426+07:00  INFO 9624 --- [todo_app] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [jdbc:mysql://localhost:3306/todo_app]
+	Database driver: MySQL Connector/J
+	Database dialect: MySQLDialect
+	Database version: 8.0.44
+	Default catalog/schema: todo_app/undefined
+	Autocommit mode: undefined/unknown
+	Isolation level: REPEATABLE_READ [default REPEATABLE_READ]
+	JDBC fetch size: none
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-02-24T10:57:35.776+07:00  INFO 9624 --- [todo_app] [main] org.hibernate.orm.core                   : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-02-24T10:57:35.976+07:00  INFO 9624 --- [todo_app] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-02-24T10:57:36.118+07:00  INFO 9624 --- [todo_app] [main] o.s.d.j.r.query.QueryEnhancerFactories   : Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-02-24T10:57:36.357+07:00  WARN 9624 --- [todo_app] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-02-24T10:57:36.493+07:00  WARN 9624 --- [todo_app] [main] .s.a.UserDetailsServiceAutoConfiguration : 
+
+Using generated security password: 5b93a242-b7df-47f7-8682-5b4405a21355
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2026-02-24T10:57:36.508+07:00  INFO 9624 --- [todo_app] [main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2026-02-24T10:57:37.386+07:00  INFO 9624 --- [todo_app] [main] o.s.boot.tomcat.TomcatWebServer          : Tomcat started on port 8080 (http) with context path '/'
+2026-02-24T10:57:37.394+07:00  INFO 9624 --- [todo_app] [main] c.example.todo_app.TodoAppApplication    : Started TodoAppApplication in 8.434 seconds (process running for 9.493)
+2026-02-24T10:57:38.080+07:00  INFO 9624 --- [todo_app] [main] c.e.t.module.Task.seeder.TaskSeeder      : Tasks already exist. Skipping seeding.
+2026-02-24T10:57:38.095+07:00  INFO 9624 --- [todo_app] [main] c.e.t.module.User.seeder.UserSeeder      : Users already exist. Skipping seeding.
+2026-02-24T13:22:38.282+07:00  INFO 14020 --- [todo_app] [main] c.e.todo_app.TodoAppApplicationTests     : Starting TodoAppApplicationTests using Java 17.0.12 with PID 14020 (started by Digidinos in C:\My Project\java\todo_app)
+2026-02-24T13:22:38.287+07:00  INFO 14020 --- [todo_app] [main] c.e.todo_app.TodoAppApplicationTests     : No active profile set, falling back to 1 default profile: "default"
+2026-02-24T13:22:39.917+07:00  INFO 14020 --- [todo_app] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-02-24T13:22:40.067+07:00  INFO 14020 --- [todo_app] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 131 ms. Found 2 JPA repository interfaces.
+2026-02-24T13:22:41.048+07:00  INFO 14020 --- [todo_app] [main] org.hibernate.orm.jpa                    : HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-02-24T13:22:41.216+07:00  INFO 14020 --- [todo_app] [main] org.hibernate.orm.core                   : HHH000001: Hibernate ORM core version 7.2.4.Final
+2026-02-24T13:22:42.499+07:00  INFO 14020 --- [todo_app] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-02-24T13:22:42.582+07:00  INFO 14020 --- [todo_app] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-02-24T13:22:43.166+07:00  INFO 14020 --- [todo_app] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@180d918a
+2026-02-24T13:22:43.170+07:00  INFO 14020 --- [todo_app] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-02-24T13:22:43.391+07:00  INFO 14020 --- [todo_app] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [jdbc:mysql://localhost:3306/todo_app]
+	Database driver: MySQL Connector/J
+	Database dialect: MySQLDialect
+	Database version: 8.0.44
+	Default catalog/schema: todo_app/undefined
+	Autocommit mode: undefined/unknown
+	Isolation level: REPEATABLE_READ [default REPEATABLE_READ]
+	JDBC fetch size: none
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-02-24T13:22:45.544+07:00  INFO 14020 --- [todo_app] [main] org.hibernate.orm.core                   : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-02-24T13:22:45.704+07:00  INFO 14020 --- [todo_app] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-02-24T13:22:45.893+07:00  INFO 14020 --- [todo_app] [main] o.s.d.j.r.query.QueryEnhancerFactories   : Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-02-24T13:22:46.449+07:00  WARN 14020 --- [todo_app] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-02-24T13:22:46.681+07:00  WARN 14020 --- [todo_app] [main] .s.a.UserDetailsServiceAutoConfiguration : 
+
+Using generated security password: 7956bece-8974-4dd4-8ab1-23231f114950
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2026-02-24T13:22:46.699+07:00  INFO 14020 --- [todo_app] [main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2026-02-24T13:22:47.777+07:00  INFO 14020 --- [todo_app] [main] c.e.todo_app.TodoAppApplicationTests     : Started TodoAppApplicationTests in 10.07 seconds (process running for 12.881)
+2026-02-24T13:22:48.722+07:00  INFO 14020 --- [todo_app] [main] c.e.t.module.Task.seeder.TaskSeeder      : Tasks already exist. Skipping seeding.
+2026-02-24T13:22:48.734+07:00  INFO 14020 --- [todo_app] [main] c.e.t.module.User.seeder.UserSeeder      : Users already exist. Skipping seeding.
+2026-02-24T13:22:49.670+07:00  INFO 14020 --- [todo_app] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-02-24T13:22:49.681+07:00  INFO 14020 --- [todo_app] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2026-02-24T13:22:49.724+07:00  INFO 14020 --- [todo_app] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
