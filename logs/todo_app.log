@@ -254,3 +254,70 @@ org.springframework.security.oauth2.jwt.JwtEncodingException: An error occurred 
 2026-02-24T16:49:00.701+07:00  INFO 14260 --- [todo_app] [http-nio-8080-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
 2026-02-24T16:49:00.709+07:00  INFO 14260 --- [todo_app] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
 2026-02-24T16:49:00.714+07:00  INFO 14260 --- [todo_app] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2026-02-24T17:13:50.749+07:00  INFO 15872 --- [todo_app] [main] c.example.todo_app.TodoAppApplication    : Starting TodoAppApplication using Java 17.0.12 with PID 15872 (C:\My Project\java\todo_app\target\classes started by Digidinos in C:\My Project\java\todo_app)
+2026-02-24T17:13:50.791+07:00  INFO 15872 --- [todo_app] [main] c.example.todo_app.TodoAppApplication    : No active profile set, falling back to 1 default profile: "default"
+2026-02-24T17:13:52.162+07:00  WARN 15872 --- [todo_app] [main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.parsing.BeanDefinitionParsingException: Configuration problem: @Bean method 'secretKey' must not be private or final; change the method's modifiers to continue.
+Offending resource: class path resource [com/example/todo_app/config/SecurityConfig.class]
+2026-02-24T17:13:52.176+07:00  INFO 15872 --- [todo_app] [main] .s.b.a.l.ConditionEvaluationReportLogger : 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2026-02-24T17:13:52.245+07:00 ERROR 15872 --- [todo_app] [main] o.s.boot.SpringApplication               : Application run failed
+
+org.springframework.beans.factory.parsing.BeanDefinitionParsingException: Configuration problem: @Bean method 'secretKey' must not be private or final; change the method's modifiers to continue.
+Offending resource: class path resource [com/example/todo_app/config/SecurityConfig.class]
+	at org.springframework.beans.factory.parsing.FailFastProblemReporter.error(FailFastProblemReporter.java:71) ~[spring-beans-7.0.5.jar:7.0.5]
+	at org.springframework.context.annotation.BeanMethod.validate(BeanMethod.java:70) ~[spring-context-7.0.5.jar:7.0.5]
+	at org.springframework.context.annotation.ConfigurationClass.validate(ConfigurationClass.java:255) ~[spring-context-7.0.5.jar:7.0.5]
+	at org.springframework.context.annotation.ConfigurationClassParser.validate(ConfigurationClassParser.java:230) ~[spring-context-7.0.5.jar:7.0.5]
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor.processConfigBeanDefinitions(ConfigurationClassPostProcessor.java:447) ~[spring-context-7.0.5.jar:7.0.5]
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor.postProcessBeanDefinitionRegistry(ConfigurationClassPostProcessor.java:310) ~[spring-context-7.0.5.jar:7.0.5]
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanDefinitionRegistryPostProcessors(PostProcessorRegistrationDelegate.java:349) ~[spring-context-7.0.5.jar:7.0.5]
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanFactoryPostProcessors(PostProcessorRegistrationDelegate.java:118) ~[spring-context-7.0.5.jar:7.0.5]
+	at org.springframework.context.support.AbstractApplicationContext.invokeBeanFactoryPostProcessors(AbstractApplicationContext.java:795) ~[spring-context-7.0.5.jar:7.0.5]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:603) ~[spring-context-7.0.5.jar:7.0.5]
+	at org.springframework.boot.web.server.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:143) ~[spring-boot-web-server-4.0.3.jar:4.0.3]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:756) ~[spring-boot-4.0.3.jar:4.0.3]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:445) ~[spring-boot-4.0.3.jar:4.0.3]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:321) ~[spring-boot-4.0.3.jar:4.0.3]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1365) ~[spring-boot-4.0.3.jar:4.0.3]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1354) ~[spring-boot-4.0.3.jar:4.0.3]
+	at com.example.todo_app.TodoAppApplication.main(TodoAppApplication.java:10) ~[classes/:na]
+
+2026-02-24T17:14:48.153+07:00  INFO 16380 --- [todo_app] [main] c.example.todo_app.TodoAppApplication    : Starting TodoAppApplication using Java 17.0.12 with PID 16380 (C:\My Project\java\todo_app\target\classes started by Digidinos in C:\My Project\java\todo_app)
+2026-02-24T17:14:48.160+07:00  INFO 16380 --- [todo_app] [main] c.example.todo_app.TodoAppApplication    : No active profile set, falling back to 1 default profile: "default"
+2026-02-24T17:14:49.407+07:00  INFO 16380 --- [todo_app] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-02-24T17:14:49.548+07:00  INFO 16380 --- [todo_app] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 109 ms. Found 2 JPA repository interfaces.
+2026-02-24T17:14:50.483+07:00  INFO 16380 --- [todo_app] [main] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 8080 (http)
+2026-02-24T17:14:50.519+07:00  INFO 16380 --- [todo_app] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-02-24T17:14:50.520+07:00  INFO 16380 --- [todo_app] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.18]
+2026-02-24T17:14:50.642+07:00  INFO 16380 --- [todo_app] [main] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 2385 ms
+2026-02-24T17:14:50.988+07:00  INFO 16380 --- [todo_app] [main] org.hibernate.orm.jpa                    : HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-02-24T17:14:51.083+07:00  INFO 16380 --- [todo_app] [main] org.hibernate.orm.core                   : HHH000001: Hibernate ORM core version 7.2.4.Final
+2026-02-24T17:14:51.893+07:00  INFO 16380 --- [todo_app] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-02-24T17:14:51.960+07:00  INFO 16380 --- [todo_app] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-02-24T17:14:52.475+07:00  INFO 16380 --- [todo_app] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@46fb9581
+2026-02-24T17:14:52.479+07:00  INFO 16380 --- [todo_app] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-02-24T17:14:52.704+07:00  INFO 16380 --- [todo_app] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [jdbc:mysql://localhost:3306/todo_app]
+	Database driver: MySQL Connector/J
+	Database dialect: MySQLDialect
+	Database version: 8.0.44
+	Default catalog/schema: todo_app/undefined
+	Autocommit mode: undefined/unknown
+	Isolation level: REPEATABLE_READ [default REPEATABLE_READ]
+	JDBC fetch size: none
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-02-24T17:14:54.189+07:00  INFO 16380 --- [todo_app] [main] org.hibernate.orm.core                   : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-02-24T17:14:54.290+07:00  INFO 16380 --- [todo_app] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-02-24T17:14:54.420+07:00  INFO 16380 --- [todo_app] [main] o.s.d.j.r.query.QueryEnhancerFactories   : Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-02-24T17:14:54.790+07:00  INFO 16380 --- [todo_app] [main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name customUserDetailsService
+2026-02-24T17:14:54.900+07:00  WARN 16380 --- [todo_app] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-02-24T17:14:55.797+07:00  INFO 16380 --- [todo_app] [main] o.s.boot.tomcat.TomcatWebServer          : Tomcat started on port 8080 (http) with context path '/'
+2026-02-24T17:14:55.807+07:00  INFO 16380 --- [todo_app] [main] c.example.todo_app.TodoAppApplication    : Started TodoAppApplication in 8.597 seconds (process running for 9.668)
+2026-02-24T17:14:56.375+07:00  INFO 16380 --- [todo_app] [main] c.e.t.module.User.seeder.UserSeeder      : Users already exist. Skipping seeding.
+2026-02-24T17:14:56.384+07:00  INFO 16380 --- [todo_app] [main] c.e.t.module.Task.seeder.TaskSeeder      : Tasks already exist. Skipping seeding.
+2026-02-24T17:15:12.149+07:00  INFO 16380 --- [todo_app] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-02-24T17:15:12.150+07:00  INFO 16380 --- [todo_app] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-02-24T17:15:12.154+07:00  INFO 16380 --- [todo_app] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
