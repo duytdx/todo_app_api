@@ -63,7 +63,6 @@ public class SecurityConfig {
         return new NimbusJwtEncoder(new ImmutableSecret<>(secretKey()));
     }
 
-    @Bean
     private SecretKey secretKey() {
         return new SecretKeySpec(jwtSecret.getBytes(StandardCharsets.UTF_8), "HmacSHA256");
     }
