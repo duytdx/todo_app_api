@@ -43,12 +43,18 @@ public class AuthController {
         User user = userRepositories.findByUsername(authentication.getName())
                 .orElseThrow(() -> new RuntimeException("User not found"));
 
+        String role = authentication.getAuthorities().stream()
+                .findFirst()
+                .map(grantedAuthority -> grantedAuthority.getAuthority())
+                .orElse("USER");
+
         JwsHeader jwsHeader = JwsHeader.with(MacAlgorithm.HS256).build();
         JwtClaimsSet claims = JwtClaimsSet.builder()
                 .subject(authentication.getName())
                 .claim("userId", user.getId())
                 .issuedAt(Instant.now())
                 .expiresAt(Instant.now().plusSeconds(3600))
+                .claim("role", role)
                 .build();
 
         String token = jwtEncoder.encode(JwtEncoderParameters.from(jwsHeader, claims)).getTokenValue();

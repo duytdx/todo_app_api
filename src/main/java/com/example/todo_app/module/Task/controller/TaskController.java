@@ -28,6 +28,9 @@ public class TaskController {
     public List<Task> getAllTasks(Authentication authentication) {
         Jwt jwt = (Jwt) authentication.getPrincipal();
         Long userId = jwt.getClaim("userId");
+        if(hasRole(authentication, "ADMIN")) {
+            return taskService.getAllTasks();
+        }
         return taskService.getTasksByUserId(userId);
     }
 
@@ -49,5 +52,10 @@ public class TaskController {
     @DeleteMapping("/{id}")
     public void deleteTask(@PathVariable Long id) {
         taskService.deleteTask(id);
+    }
+
+    private boolean hasRole(Authentication authentication, String role) {
+        return authentication.getAuthorities().stream()
+                .anyMatch(auth -> auth.getAuthority().equals("ROLE_" + role));
     }
 }
