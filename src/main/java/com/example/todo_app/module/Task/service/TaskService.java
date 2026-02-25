@@ -1,5 +1,7 @@
 package com.example.todo_app.module.Task.service;
 
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Service;
 import com.example.todo_app.module.Task.repository.TaskRepositories;
@@ -8,7 +10,6 @@ import com.example.todo_app.module.Task.dto.UpdateTaskRequest;
 import com.example.todo_app.module.Task.model.Task;
 import com.example.todo_app.module.User.model.User;
 import com.example.todo_app.module.User.repository.UserRepositories;
-import java.util.List;
 
 @Service
 public class TaskService {
@@ -21,17 +22,17 @@ public class TaskService {
     }
 
     @PreAuthorize("hasRole('ADMIN')")
-    public List<Task> getAllTasks() {
+    public Page<Task> getAllTasks(Pageable pageable) {
         try {
-            return taskRepositories.findAll();
+            return taskRepositories.findAll(pageable);
         } catch (Exception e) {
             throw new RuntimeException("Error retrieving tasks from database", e);
         }
     }
 
-    public List<Task> getTasksByUserId(Long userId) {
+    public Page<Task> getTasksByUserId(Long userId, Pageable pageable) {
         try {
-            return taskRepositories.findByCreateById(userId);
+            return taskRepositories.findByCreateById(userId, pageable);
         } catch (Exception e) {
             throw new RuntimeException("Error retrieving tasks for user: " + userId, e);
         }
@@ -40,7 +41,7 @@ public class TaskService {
     public Task getTaskById(Long id) {
         try {
             return taskRepositories.findById(id)
-                .orElseThrow(() -> new IllegalArgumentException("Task not found with id: " + id));
+                    .orElseThrow(() -> new IllegalArgumentException("Task not found with id: " + id));
         } catch (IllegalArgumentException e) {
             throw e;
         } catch (Exception e) {
@@ -51,7 +52,7 @@ public class TaskService {
     public Task createTask(CreateTaskRequest request, Long userId) {
         try {
             User user = userRepositories.findById(userId)
-                .orElseThrow(() -> new IllegalArgumentException("User not found with id: " + userId));
+                    .orElseThrow(() -> new IllegalArgumentException("User not found with id: " + userId));
 
             Task newTask = new Task();
             newTask.setTitle(request.title());
@@ -69,7 +70,7 @@ public class TaskService {
     public Task updateTask(Long id, UpdateTaskRequest request) {
         try {
             Task task = taskRepositories.findById(id)
-                .orElseThrow(() -> new IllegalArgumentException("Task not found with id: " + id));
+                    .orElseThrow(() -> new IllegalArgumentException("Task not found with id: " + id));
 
             task.setTitle(request.title());
             task.setDescription(request.description());
