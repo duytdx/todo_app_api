@@ -2,6 +2,9 @@ package com.example.todo_app.module.Task.controller;
 
 import java.util.List;
 
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.web.PageableDefault;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.oauth2.jwt.Jwt;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -29,14 +32,14 @@ public class TaskController {
     }
 
     @GetMapping("/")
-    public List<Task> getAllTasks(Authentication authentication) {
+    public Page<Task> getAllTasks(Authentication authentication, @PageableDefault(size = 10) Pageable pageable) {
         try {
             Jwt jwt = (Jwt) authentication.getPrincipal();
             Long userId = jwt.getClaim("userId");
-            if(hasRole(authentication, "ADMIN")) {
-                return taskService.getAllTasks();
+            if (hasRole(authentication, "ADMIN")) {
+                return taskService.getAllTasks(pageable);
             }
-            return taskService.getTasksByUserId(userId);
+            return taskService.getTasksByUserId(userId, pageable);
         } catch (Exception e) {
             throw new RuntimeException("Failed to retrieve tasks: " + e.getMessage());
         }

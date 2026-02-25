@@ -3,6 +3,8 @@ package com.example.todo_app.module.User.service;
 import java.util.List;
 
 import org.hibernate.sql.Update;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import com.example.todo_app.module.User.dto.UpdateUserRequest;
@@ -20,9 +22,9 @@ public class UserService {
         this.passwordEncoder = passwordEncoder;
     }
 
-    public List<User> getAllUsers() {
+    public Page<User> getAllUsers(Pageable pageable) {
         try {
-            return userRepositories.findAll();
+            return userRepositories.findAll(pageable);
         } catch (Exception e) {
             throw new RuntimeException("Error retrieving users from database", e);
         }

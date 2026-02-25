@@ -2,6 +2,9 @@ package com.example.todo_app.module.User.controller;
 
 import java.util.List;
 
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.web.PageableDefault;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -29,9 +32,9 @@ public class UserController {
     }
 
     @GetMapping("/")
-    public List<User> getAllUsers() {
+    public Page<User> getAllUsers(@PageableDefault(size = 10) Pageable pageable) {
         try {
-            return userService.getAllUsers();
+            return userService.getAllUsers(pageable);
         } catch (Exception e) {
             throw new RuntimeException("Failed to retrieve users: " + e.getMessage());
         }
