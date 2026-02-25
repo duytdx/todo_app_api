@@ -10,4 +10,6 @@ import com.example.todo_app.module.User.model.User;
 public interface UserRepositories extends JpaRepository<User, Long> {
     Optional<User> findByUsername(String username);
     Optional<User> findByEmail(String email);
+    boolean existsByUsername(String username);
+    boolean existsByEmail(String email);
 }

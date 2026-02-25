@@ -36,28 +36,34 @@ public class AuthController {
 
     @PostMapping("/login")
     public ResponseToken login(@RequestBody LoginRequest request) {
-        Authentication authentication = authenticationManager.authenticate(
-                new UsernamePasswordAuthenticationToken(request.username(), request.password())
-        );
+        try {
+            Authentication authentication = authenticationManager.authenticate(
+                    new UsernamePasswordAuthenticationToken(request.username(), request.password())
+            );
 
-        User user = userRepositories.findByUsername(authentication.getName())
-                .orElseThrow(() -> new RuntimeException("User not found"));
+            User user = userRepositories.findByUsername(authentication.getName())
+                    .orElseThrow(() -> new RuntimeException("User not found"));
 
-        String role = authentication.getAuthorities().stream()
-                .findFirst()
-                .map(grantedAuthority -> grantedAuthority.getAuthority())
-                .orElse("USER");
+            String role = authentication.getAuthorities().stream()
+                    .findFirst()
+                    .map(grantedAuthority -> grantedAuthority.getAuthority())
+                    .orElse("USER");
 
-        JwsHeader jwsHeader = JwsHeader.with(MacAlgorithm.HS256).build();
-        JwtClaimsSet claims = JwtClaimsSet.builder()
-                .subject(authentication.getName())
-                .claim("userId", user.getId())
-                .issuedAt(Instant.now())
-                .expiresAt(Instant.now().plusSeconds(3600))
-                .claim("role", role)
-                .build();
+            JwsHeader jwsHeader = JwsHeader.with(MacAlgorithm.HS256).build();
+            JwtClaimsSet claims = JwtClaimsSet.builder()
+                    .subject(authentication.getName())
+                    .claim("userId", user.getId())
+                    .issuedAt(Instant.now())
+                    .expiresAt(Instant.now().plusSeconds(3600))
+                    .claim("role", role)
+                    .build();
 
-        String token = jwtEncoder.encode(JwtEncoderParameters.from(jwsHeader, claims)).getTokenValue();
-        return new ResponseToken(token);
+            String token = jwtEncoder.encode(JwtEncoderParameters.from(jwsHeader, claims)).getTokenValue();
+            return new ResponseToken(token);
+        } catch (org.springframework.security.authentication.BadCredentialsException e) {
+            throw new org.springframework.security.authentication.BadCredentialsException("Invalid username or password");
+        } catch (Exception e) {
+            throw new RuntimeException("Authentication failed: " + e.getMessage(), e);
+        }
     }
 }
