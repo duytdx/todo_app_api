@@ -1,6 +1,5 @@
 package com.example.todo_app.config;
 
-import java.util.ArrayList;
 import org.springframework.stereotype.Service;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
@@ -21,13 +20,15 @@ public class CustomUserDetailsService implements UserDetailsService {
     public UserDetails loadUserByUsername(String usernameorEmail) throws UsernameNotFoundException {
         User user = userRepositories.findByUsername(usernameorEmail)
                 .orElseGet(() -> userRepositories.findByEmail(usernameorEmail)
-                        .orElseThrow(() -> new UsernameNotFoundException("User not found with username or email: " + usernameorEmail)));
+                        .orElseThrow(() -> new UsernameNotFoundException(
+                                "User not found with username or email: " + usernameorEmail)));
+        String role = user.getRole().toUpperCase();
 
-        return new org.springframework.security.core.userdetails.User(
-                user.getUsername(),
-                user.getPassword(),
-                new ArrayList<>()
-        );
+        return org.springframework.security.core.userdetails.User.builder()
+            .username(user.getUsername())
+            .password(user.getPassword())
+            .authorities(role)
+            .build();
     }
 
 }

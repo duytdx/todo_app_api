@@ -1,5 +1,6 @@
 package com.example.todo_app.module.Task.service;
 
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Service;
 import com.example.todo_app.module.Task.repository.TaskRepositories;
 import com.example.todo_app.module.Task.model.Task;
@@ -13,6 +14,7 @@ public class TaskService {
         this.taskRepositories = taskRepositories;
     }
 
+    @PreAuthorize("hasRole('ADMIN')")
     public List<Task> getAllTasks() {
         return taskRepositories.findAll();
     }
