@@ -1,7 +1,5 @@
 package com.example.todo_app.module.Task.controller;
 
-import java.util.List;
-
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.web.PageableDefault;
@@ -15,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.RestController;
+import org.springdoc.core.annotations.ParameterObject;
 import com.example.todo_app.module.Task.dto.CreateTaskRequest;
 import com.example.todo_app.module.Task.dto.UpdateTaskRequest;
 import com.example.todo_app.module.Task.service.TaskService;
@@ -32,7 +31,7 @@ public class TaskController {
     }
 
     @GetMapping("/")
-    public Page<Task> getAllTasks(Authentication authentication, @PageableDefault(size = 10) Pageable pageable) {
+    public Page<Task> getAllTasks(Authentication authentication, @ParameterObject @PageableDefault(size = 10) Pageable pageable) {
         try {
             Jwt jwt = (Jwt) authentication.getPrincipal();
             Long userId = jwt.getClaim("userId");
