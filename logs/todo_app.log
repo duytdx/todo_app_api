@@ -1,122 +1,14 @@
-2026-02-24T16:43:15.486+07:00 ERROR 13380 --- [todo_app] [http-nio-8080-exec-5] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed: org.springframework.security.oauth2.jwt.JwtEncodingException: An error occurred while attempting to encode the Jwt: Failed to select a JWK signing key] with root cause
-
-org.springframework.security.oauth2.jwt.JwtEncodingException: An error occurred while attempting to encode the Jwt: Failed to select a JWK signing key
-	at org.springframework.security.oauth2.jwt.NimbusJwtEncoder.selectJwk(NimbusJwtEncoder.java:201) ~[spring-security-oauth2-jose-7.0.3.jar:7.0.3]
-	at org.springframework.security.oauth2.jwt.NimbusJwtEncoder.encode(NimbusJwtEncoder.java:181) ~[spring-security-oauth2-jose-7.0.3.jar:7.0.3]
-	at com.example.todo_app.module.User.controller.AuthController.login(AuthController.java:36) ~[classes/:na]
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[na:na]
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
-	at java.base/java.lang.reflect.Method.invoke(Method.java:568) ~[na:na]
-	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:252) ~[spring-web-7.0.5.jar:7.0.5]
-	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:184) ~[spring-web-7.0.5.jar:7.0.5]
-	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117) ~[spring-webmvc-7.0.5.jar:7.0.5]
-	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:934) ~[spring-webmvc-7.0.5.jar:7.0.5]
-	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:853) ~[spring-webmvc-7.0.5.jar:7.0.5]
-	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:86) ~[spring-webmvc-7.0.5.jar:7.0.5]
-	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:963) ~[spring-webmvc-7.0.5.jar:7.0.5]
-	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:866) ~[spring-webmvc-7.0.5.jar:7.0.5]
-	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1000) ~[spring-webmvc-7.0.5.jar:7.0.5]
-	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:903) ~[spring-webmvc-7.0.5.jar:7.0.5]
-	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:649) ~[tomcat-embed-core-11.0.18.jar:6.1]
-	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:874) ~[spring-webmvc-7.0.5.jar:7.0.5]
-	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:710) ~[tomcat-embed-core-11.0.18.jar:6.1]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:128) ~[tomcat-embed-core-11.0.18.jar:11.0.18]
-	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) ~[tomcat-embed-websocket-11.0.18.jar:11.0.18]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:107) ~[tomcat-embed-core-11.0.18.jar:11.0.18]
-	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:108) ~[spring-web-7.0.5.jar:7.0.5]
-	at org.springframework.security.web.FilterChainProxy.lambda$doFilterInternal$3(FilterChainProxy.java:235) ~[spring-security-web-7.0.3.jar:7.0.3]
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:371) ~[spring-security-web-7.0.3.jar:7.0.3]
-	at org.springframework.security.web.access.intercept.AuthorizationFilter.doFilter(AuthorizationFilter.java:101) ~[spring-security-web-7.0.3.jar:7.0.3]
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:380) ~[spring-security-web-7.0.3.jar:7.0.3]
-	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:126) ~[spring-security-web-7.0.3.jar:7.0.3]
-	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:120) ~[spring-security-web-7.0.3.jar:7.0.3]
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:380) ~[spring-security-web-7.0.3.jar:7.0.3]
-	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:132) ~[spring-security-web-7.0.3.jar:7.0.3]
-	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:86) ~[spring-security-web-7.0.3.jar:7.0.3]
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:380) ~[spring-security-web-7.0.3.jar:7.0.3]
-	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:100) ~[spring-security-web-7.0.3.jar:7.0.3]
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:380) ~[spring-security-web-7.0.3.jar:7.0.3]
-	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:181) ~[spring-security-web-7.0.3.jar:7.0.3]
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:380) ~[spring-security-web-7.0.3.jar:7.0.3]
-	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63) ~[spring-security-web-7.0.3.jar:7.0.3]
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:380) ~[spring-security-web-7.0.3.jar:7.0.3]
-	at org.springframework.security.web.authentication.AuthenticationFilter.doFilterInternal(AuthenticationFilter.java:194) ~[spring-security-web-7.0.3.jar:7.0.3]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-7.0.5.jar:7.0.5]
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:380) ~[spring-security-web-7.0.3.jar:7.0.3]
-	at org.springframework.security.oauth2.server.resource.web.authentication.BearerTokenAuthenticationFilter.doFilterInternal(BearerTokenAuthenticationFilter.java:174) ~[spring-security-oauth2-resource-server-7.0.3.jar:7.0.3]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-7.0.5.jar:7.0.5]
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:380) ~[spring-security-web-7.0.3.jar:7.0.3]
-	at org.springframework.security.oauth2.server.resource.web.OAuth2ProtectedResourceMetadataFilter.doFilterInternal(OAuth2ProtectedResourceMetadataFilter.java:97) ~[spring-security-oauth2-resource-server-7.0.3.jar:7.0.3]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-7.0.5.jar:7.0.5]
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:380) ~[spring-security-web-7.0.3.jar:7.0.3]
-	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:110) ~[spring-security-web-7.0.3.jar:7.0.3]
-	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:96) ~[spring-security-web-7.0.3.jar:7.0.3]
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:380) ~[spring-security-web-7.0.3.jar:7.0.3]
-	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:90) ~[spring-security-web-7.0.3.jar:7.0.3]
-	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:75) ~[spring-security-web-7.0.3.jar:7.0.3]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-7.0.5.jar:7.0.5]
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:380) ~[spring-security-web-7.0.3.jar:7.0.3]
-	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:82) ~[spring-security-web-7.0.3.jar:7.0.3]
-	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:69) ~[spring-security-web-7.0.3.jar:7.0.3]
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:380) ~[spring-security-web-7.0.3.jar:7.0.3]
-	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:62) ~[spring-security-web-7.0.3.jar:7.0.3]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-7.0.5.jar:7.0.5]
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:380) ~[spring-security-web-7.0.3.jar:7.0.3]
-	at org.springframework.security.web.session.DisableEncodeUrlFilter.doFilterInternal(DisableEncodeUrlFilter.java:42) ~[spring-security-web-7.0.3.jar:7.0.3]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-7.0.5.jar:7.0.5]
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:380) ~[spring-security-web-7.0.3.jar:7.0.3]
-	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:237) ~[spring-security-web-7.0.3.jar:7.0.3]
-	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:195) ~[spring-security-web-7.0.3.jar:7.0.3]
-	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113) ~[spring-web-7.0.5.jar:7.0.5]
-	at org.springframework.web.filter.ServletRequestPathFilter.doFilter(ServletRequestPathFilter.java:52) ~[spring-web-7.0.5.jar:7.0.5]
-	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113) ~[spring-web-7.0.5.jar:7.0.5]
-	at org.springframework.web.filter.CompositeFilter.doFilter(CompositeFilter.java:74) ~[spring-web-7.0.5.jar:7.0.5]
-	at org.springframework.security.config.annotation.web.configuration.WebSecurityConfiguration$CompositeFilterChainProxy.doFilter(WebSecurityConfiguration.java:317) ~[spring-security-config-7.0.3.jar:7.0.3]
-	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:355) ~[spring-web-7.0.5.jar:7.0.5]
-	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:272) ~[spring-web-7.0.5.jar:7.0.5]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:107) ~[tomcat-embed-core-11.0.18.jar:11.0.18]
-	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-7.0.5.jar:7.0.5]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-7.0.5.jar:7.0.5]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:107) ~[tomcat-embed-core-11.0.18.jar:11.0.18]
-	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-7.0.5.jar:7.0.5]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-7.0.5.jar:7.0.5]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:107) ~[tomcat-embed-core-11.0.18.jar:11.0.18]
-	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:199) ~[spring-web-7.0.5.jar:7.0.5]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-7.0.5.jar:7.0.5]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:107) ~[tomcat-embed-core-11.0.18.jar:11.0.18]
-	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:165) ~[tomcat-embed-core-11.0.18.jar:11.0.18]
-	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:77) ~[tomcat-embed-core-11.0.18.jar:11.0.18]
-	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:492) ~[tomcat-embed-core-11.0.18.jar:11.0.18]
-	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:113) ~[tomcat-embed-core-11.0.18.jar:11.0.18]
-	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:83) ~[tomcat-embed-core-11.0.18.jar:11.0.18]
-	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:72) ~[tomcat-embed-core-11.0.18.jar:11.0.18]
-	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:341) ~[tomcat-embed-core-11.0.18.jar:11.0.18]
-	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:397) ~[tomcat-embed-core-11.0.18.jar:11.0.18]
-	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63) ~[tomcat-embed-core-11.0.18.jar:11.0.18]
-	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:903) ~[tomcat-embed-core-11.0.18.jar:11.0.18]
-	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1779) ~[tomcat-embed-core-11.0.18.jar:11.0.18]
-	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52) ~[tomcat-embed-core-11.0.18.jar:11.0.18]
-	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:946) ~[tomcat-embed-core-11.0.18.jar:11.0.18]
-	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:480) ~[tomcat-embed-core-11.0.18.jar:11.0.18]
-	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:57) ~[tomcat-embed-core-11.0.18.jar:11.0.18]
-	at java.base/java.lang.Thread.run(Thread.java:842) ~[na:na]
-
-2026-02-24T16:44:07.962+07:00  INFO 3740 --- [todo_app] [main] c.example.todo_app.TodoAppApplication    : Starting TodoAppApplication using Java 17.0.12 with PID 3740 (C:\My Project\java\todo_app\target\classes started by Digidinos in C:\My Project\java\todo_app)
-2026-02-24T16:44:07.971+07:00  INFO 3740 --- [todo_app] [main] c.example.todo_app.TodoAppApplication    : No active profile set, falling back to 1 default profile: "default"
-2026-02-24T16:44:09.622+07:00  INFO 3740 --- [todo_app] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2026-02-24T16:44:09.802+07:00  INFO 3740 --- [todo_app] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 144 ms. Found 2 JPA repository interfaces.
-2026-02-24T16:44:10.990+07:00  INFO 3740 --- [todo_app] [main] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 8080 (http)
-2026-02-24T16:44:11.025+07:00  INFO 3740 --- [todo_app] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2026-02-24T16:44:11.066+07:00  INFO 3740 --- [todo_app] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.18]
-2026-02-24T16:44:11.226+07:00  INFO 3740 --- [todo_app] [main] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 3136 ms
-2026-02-24T16:44:11.640+07:00  INFO 3740 --- [todo_app] [main] org.hibernate.orm.jpa                    : HHH008540: Processing PersistenceUnitInfo [name: default]
-2026-02-24T16:44:11.834+07:00  INFO 3740 --- [todo_app] [main] org.hibernate.orm.core                   : HHH000001: Hibernate ORM core version 7.2.4.Final
-2026-02-24T16:44:12.863+07:00  INFO 3740 --- [todo_app] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2026-02-24T16:44:12.923+07:00  INFO 3740 --- [todo_app] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2026-02-24T16:44:13.471+07:00  INFO 3740 --- [todo_app] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@6fcc0a1
-2026-02-24T16:44:13.474+07:00  INFO 3740 --- [todo_app] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2026-02-24T16:44:13.650+07:00  INFO 3740 --- [todo_app] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+2026-02-26T09:26:24.365+07:00  INFO 8184 --- [todo_app] [main] c.e.todo_app.TodoAppApplicationTests     : Starting TodoAppApplicationTests using Java 17.0.12 with PID 8184 (started by Digidinos in C:\My Project\java\todo_app)
+2026-02-26T09:26:24.380+07:00  INFO 8184 --- [todo_app] [main] c.e.todo_app.TodoAppApplicationTests     : No active profile set, falling back to 1 default profile: "default"
+2026-02-26T09:26:26.557+07:00  INFO 8184 --- [todo_app] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-02-26T09:26:26.760+07:00  INFO 8184 --- [todo_app] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 167 ms. Found 2 JPA repository interfaces.
+2026-02-26T09:26:27.833+07:00  INFO 8184 --- [todo_app] [main] org.hibernate.orm.jpa                    : HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-02-26T09:26:28.089+07:00  INFO 8184 --- [todo_app] [main] org.hibernate.orm.core                   : HHH000001: Hibernate ORM core version 7.2.4.Final
+2026-02-26T09:26:29.739+07:00  INFO 8184 --- [todo_app] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-02-26T09:26:29.786+07:00  INFO 8184 --- [todo_app] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-02-26T09:26:30.445+07:00  INFO 8184 --- [todo_app] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@57617a75
+2026-02-26T09:26:30.450+07:00  INFO 8184 --- [todo_app] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-02-26T09:26:30.623+07:00  INFO 8184 --- [todo_app] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
 	Database JDBC URL [jdbc:mysql://localhost:3306/todo_app]
 	Database driver: MySQL Connector/J
 	Database dialect: MySQLDialect
@@ -128,33 +20,34 @@ org.springframework.security.oauth2.jwt.JwtEncodingException: An error occurred 
 	Pool: DataSourceConnectionProvider
 	Minimum pool size: undefined/unknown
 	Maximum pool size: undefined/unknown
-2026-02-24T16:44:15.819+07:00  INFO 3740 --- [todo_app] [main] org.hibernate.orm.core                   : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2026-02-24T16:44:15.933+07:00  INFO 3740 --- [todo_app] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2026-02-24T16:44:16.096+07:00  INFO 3740 --- [todo_app] [main] o.s.d.j.r.query.QueryEnhancerFactories   : Hibernate is in classpath; If applicable, HQL parser will be used.
-2026-02-24T16:44:16.525+07:00  INFO 3740 --- [todo_app] [main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name customUserDetailsService
-2026-02-24T16:44:16.648+07:00  WARN 3740 --- [todo_app] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2026-02-24T16:44:17.767+07:00  INFO 3740 --- [todo_app] [main] o.s.boot.tomcat.TomcatWebServer          : Tomcat started on port 8080 (http) with context path '/'
-2026-02-24T16:44:17.781+07:00  INFO 3740 --- [todo_app] [main] c.example.todo_app.TodoAppApplication    : Started TodoAppApplication in 10.785 seconds (process running for 12.133)
-2026-02-24T16:44:18.605+07:00  INFO 3740 --- [todo_app] [main] c.e.t.module.User.seeder.UserSeeder      : Users already exist. Skipping seeding.
-2026-02-24T16:44:18.627+07:00  INFO 3740 --- [todo_app] [main] c.e.t.module.Task.seeder.TaskSeeder      : Tasks already exist. Skipping seeding.
-2026-02-24T16:44:22.486+07:00  INFO 3740 --- [todo_app] [http-nio-8080-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2026-02-24T16:44:22.487+07:00  INFO 3740 --- [todo_app] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2026-02-24T16:44:22.492+07:00  INFO 3740 --- [todo_app] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
-2026-02-24T16:45:46.722+07:00  INFO 15580 --- [todo_app] [main] c.example.todo_app.TodoAppApplication    : Starting TodoAppApplication using Java 17.0.12 with PID 15580 (C:\My Project\java\todo_app\target\classes started by Digidinos in C:\My Project\java\todo_app)
-2026-02-24T16:45:46.733+07:00  INFO 15580 --- [todo_app] [main] c.example.todo_app.TodoAppApplication    : No active profile set, falling back to 1 default profile: "default"
-2026-02-24T16:45:48.258+07:00  INFO 15580 --- [todo_app] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2026-02-24T16:45:48.462+07:00  INFO 15580 --- [todo_app] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 183 ms. Found 2 JPA repository interfaces.
-2026-02-24T16:45:49.795+07:00  INFO 15580 --- [todo_app] [main] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 8080 (http)
-2026-02-24T16:45:49.830+07:00  INFO 15580 --- [todo_app] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2026-02-24T16:45:49.832+07:00  INFO 15580 --- [todo_app] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.18]
-2026-02-24T16:45:50.057+07:00  INFO 15580 --- [todo_app] [main] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 3204 ms
-2026-02-24T16:45:50.744+07:00  INFO 15580 --- [todo_app] [main] org.hibernate.orm.jpa                    : HHH008540: Processing PersistenceUnitInfo [name: default]
-2026-02-24T16:45:50.978+07:00  INFO 15580 --- [todo_app] [main] org.hibernate.orm.core                   : HHH000001: Hibernate ORM core version 7.2.4.Final
-2026-02-24T16:45:51.945+07:00  INFO 15580 --- [todo_app] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2026-02-24T16:45:52.022+07:00  INFO 15580 --- [todo_app] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2026-02-24T16:45:52.852+07:00  INFO 15580 --- [todo_app] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@46fb9581
-2026-02-24T16:45:52.943+07:00  INFO 15580 --- [todo_app] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2026-02-24T16:45:53.144+07:00  INFO 15580 --- [todo_app] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+2026-02-26T09:26:32.410+07:00  INFO 8184 --- [todo_app] [main] org.hibernate.orm.core                   : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-02-26T09:26:32.587+07:00  INFO 8184 --- [todo_app] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-02-26T09:26:32.911+07:00  INFO 8184 --- [todo_app] [main] o.s.d.j.r.query.QueryEnhancerFactories   : Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-02-26T09:26:33.495+07:00  INFO 8184 --- [todo_app] [main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name customUserDetailsService
+2026-02-26T09:26:33.866+07:00  WARN 8184 --- [todo_app] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-02-26T09:26:35.512+07:00  INFO 8184 --- [todo_app] [main] c.e.todo_app.TodoAppApplicationTests     : Started TodoAppApplicationTests in 11.691 seconds (process running for 14.639)
+2026-02-26T09:26:36.761+07:00  INFO 8184 --- [todo_app] [main] c.e.t.module.User.seeder.UserSeeder      : Users already exist. Skipping seeding.
+2026-02-26T09:26:36.779+07:00  INFO 8184 --- [todo_app] [main] c.e.t.module.Task.seeder.TaskSeeder      : Tasks already exist. Skipping seeding.
+2026-02-26T09:26:36.781+07:00  WARN 8184 --- [todo_app] [main] o.s.core.events.SpringDocAppInitializer  : SpringDoc /v3/api-docs endpoint is enabled by default. To disable it in production, set the property 'springdoc.api-docs.enabled=false'
+2026-02-26T09:26:36.781+07:00  WARN 8184 --- [todo_app] [main] o.s.core.events.SpringDocAppInitializer  : SpringDoc /swagger-ui.html endpoint is enabled by default. To disable it in production, set the property 'springdoc.swagger-ui.enabled=false'
+2026-02-26T09:26:38.123+07:00  INFO 8184 --- [todo_app] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-02-26T09:26:38.130+07:00  INFO 8184 --- [todo_app] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2026-02-26T09:26:38.575+07:00  INFO 8184 --- [todo_app] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2026-02-26T09:27:19.694+07:00  INFO 5400 --- [todo_app] [main] c.example.todo_app.TodoAppApplication    : Starting TodoAppApplication using Java 17.0.12 with PID 5400 (C:\My Project\java\todo_app\target\classes started by Digidinos in C:\My Project\java\todo_app)
+2026-02-26T09:27:19.701+07:00  INFO 5400 --- [todo_app] [main] c.example.todo_app.TodoAppApplication    : No active profile set, falling back to 1 default profile: "default"
+2026-02-26T09:27:21.863+07:00  INFO 5400 --- [todo_app] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-02-26T09:27:22.028+07:00  INFO 5400 --- [todo_app] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 147 ms. Found 2 JPA repository interfaces.
+2026-02-26T09:27:23.180+07:00  INFO 5400 --- [todo_app] [main] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 8080 (http)
+2026-02-26T09:27:23.204+07:00  INFO 5400 --- [todo_app] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-02-26T09:27:23.207+07:00  INFO 5400 --- [todo_app] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.18]
+2026-02-26T09:27:23.371+07:00  INFO 5400 --- [todo_app] [main] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 3555 ms
+2026-02-26T09:27:23.704+07:00  INFO 5400 --- [todo_app] [main] org.hibernate.orm.jpa                    : HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-02-26T09:27:23.810+07:00  INFO 5400 --- [todo_app] [main] org.hibernate.orm.core                   : HHH000001: Hibernate ORM core version 7.2.4.Final
+2026-02-26T09:27:24.649+07:00  INFO 5400 --- [todo_app] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-02-26T09:27:24.702+07:00  INFO 5400 --- [todo_app] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-02-26T09:27:25.360+07:00  INFO 5400 --- [todo_app] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@7a34505a
+2026-02-26T09:27:25.363+07:00  INFO 5400 --- [todo_app] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-02-26T09:27:25.552+07:00  INFO 5400 --- [todo_app] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
 	Database JDBC URL [jdbc:mysql://localhost:3306/todo_app]
 	Database driver: MySQL Connector/J
 	Database dialect: MySQLDialect
@@ -166,33 +59,37 @@ org.springframework.security.oauth2.jwt.JwtEncodingException: An error occurred 
 	Pool: DataSourceConnectionProvider
 	Minimum pool size: undefined/unknown
 	Maximum pool size: undefined/unknown
-2026-02-24T16:45:54.958+07:00  INFO 15580 --- [todo_app] [main] org.hibernate.orm.core                   : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2026-02-24T16:45:55.070+07:00  INFO 15580 --- [todo_app] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2026-02-24T16:45:55.407+07:00  INFO 15580 --- [todo_app] [main] o.s.d.j.r.query.QueryEnhancerFactories   : Hibernate is in classpath; If applicable, HQL parser will be used.
-2026-02-24T16:45:55.906+07:00  INFO 15580 --- [todo_app] [main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name customUserDetailsService
-2026-02-24T16:45:56.023+07:00  WARN 15580 --- [todo_app] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2026-02-24T16:45:57.185+07:00  INFO 15580 --- [todo_app] [main] o.s.boot.tomcat.TomcatWebServer          : Tomcat started on port 8080 (http) with context path '/'
-2026-02-24T16:45:57.200+07:00  INFO 15580 --- [todo_app] [main] c.example.todo_app.TodoAppApplication    : Started TodoAppApplication in 11.458 seconds (process running for 12.913)
-2026-02-24T16:45:57.879+07:00  INFO 15580 --- [todo_app] [main] c.e.t.module.User.seeder.UserSeeder      : Users already exist. Skipping seeding.
-2026-02-24T16:45:57.892+07:00  INFO 15580 --- [todo_app] [main] c.e.t.module.Task.seeder.TaskSeeder      : Tasks already exist. Skipping seeding.
-2026-02-24T16:46:01.296+07:00  INFO 15580 --- [todo_app] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2026-02-24T16:46:01.298+07:00  INFO 15580 --- [todo_app] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2026-02-24T16:46:01.301+07:00  INFO 15580 --- [todo_app] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
-2026-02-24T16:46:54.723+07:00  INFO 16320 --- [todo_app] [main] c.example.todo_app.TodoAppApplication    : Starting TodoAppApplication using Java 17.0.12 with PID 16320 (C:\My Project\java\todo_app\target\classes started by Digidinos in C:\My Project\java\todo_app)
-2026-02-24T16:46:54.748+07:00  INFO 16320 --- [todo_app] [main] c.example.todo_app.TodoAppApplication    : No active profile set, falling back to 1 default profile: "default"
-2026-02-24T16:46:56.330+07:00  INFO 16320 --- [todo_app] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2026-02-24T16:46:56.525+07:00  INFO 16320 --- [todo_app] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 174 ms. Found 2 JPA repository interfaces.
-2026-02-24T16:46:57.737+07:00  INFO 16320 --- [todo_app] [main] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 8080 (http)
-2026-02-24T16:46:57.760+07:00  INFO 16320 --- [todo_app] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2026-02-24T16:46:57.761+07:00  INFO 16320 --- [todo_app] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.18]
-2026-02-24T16:46:57.886+07:00  INFO 16320 --- [todo_app] [main] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 2987 ms
-2026-02-24T16:46:58.301+07:00  INFO 16320 --- [todo_app] [main] org.hibernate.orm.jpa                    : HHH008540: Processing PersistenceUnitInfo [name: default]
-2026-02-24T16:46:58.430+07:00  INFO 16320 --- [todo_app] [main] org.hibernate.orm.core                   : HHH000001: Hibernate ORM core version 7.2.4.Final
-2026-02-24T16:46:59.469+07:00  INFO 16320 --- [todo_app] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2026-02-24T16:46:59.557+07:00  INFO 16320 --- [todo_app] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2026-02-24T16:47:00.246+07:00  INFO 16320 --- [todo_app] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@6614289a
-2026-02-24T16:47:00.254+07:00  INFO 16320 --- [todo_app] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2026-02-24T16:47:00.421+07:00  INFO 16320 --- [todo_app] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+2026-02-26T09:27:27.142+07:00  INFO 5400 --- [todo_app] [main] org.hibernate.orm.core                   : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-02-26T09:27:27.278+07:00  INFO 5400 --- [todo_app] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-02-26T09:27:27.425+07:00  INFO 5400 --- [todo_app] [main] o.s.d.j.r.query.QueryEnhancerFactories   : Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-02-26T09:27:28.214+07:00  INFO 5400 --- [todo_app] [main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name customUserDetailsService
+2026-02-26T09:27:28.988+07:00  WARN 5400 --- [todo_app] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-02-26T09:27:30.612+07:00  INFO 5400 --- [todo_app] [main] o.s.boot.tomcat.TomcatWebServer          : Tomcat started on port 8080 (http) with context path '/'
+2026-02-26T09:27:30.627+07:00  INFO 5400 --- [todo_app] [main] c.example.todo_app.TodoAppApplication    : Started TodoAppApplication in 11.829 seconds (process running for 13.16)
+2026-02-26T09:27:31.268+07:00  INFO 5400 --- [todo_app] [main] c.e.t.module.User.seeder.UserSeeder      : Users already exist. Skipping seeding.
+2026-02-26T09:27:31.290+07:00  INFO 5400 --- [todo_app] [main] c.e.t.module.Task.seeder.TaskSeeder      : Tasks already exist. Skipping seeding.
+2026-02-26T09:27:31.294+07:00  WARN 5400 --- [todo_app] [main] o.s.core.events.SpringDocAppInitializer  : SpringDoc /v3/api-docs endpoint is enabled by default. To disable it in production, set the property 'springdoc.api-docs.enabled=false'
+2026-02-26T09:27:31.297+07:00  WARN 5400 --- [todo_app] [main] o.s.core.events.SpringDocAppInitializer  : SpringDoc /swagger-ui.html endpoint is enabled by default. To disable it in production, set the property 'springdoc.swagger-ui.enabled=false'
+2026-02-26T09:27:37.174+07:00  INFO 5400 --- [todo_app] [http-nio-8080-exec-1] o.apache.tomcat.util.http.parser.Cookie  : A cookie header was received [g_state={"i_l":0,"i_ll":1772005022287,"i_e":{"enable_itp_optimization":16},"i_b":"ZgqmzpyBSrg9t4QSqGE68w0E0kX7MoQDnsS4F+QM1EU"}] that contained an invalid cookie. That cookie will be ignored.
+ Note: further occurrences of this error will be logged at DEBUG level.
+2026-02-26T09:27:37.199+07:00  INFO 5400 --- [todo_app] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-02-26T09:27:37.241+07:00  INFO 5400 --- [todo_app] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-02-26T09:27:37.273+07:00  INFO 5400 --- [todo_app] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 29 ms
+2026-02-26T09:28:43.942+07:00  INFO 9104 --- [todo_app] [main] c.example.todo_app.TodoAppApplication    : Starting TodoAppApplication using Java 17.0.12 with PID 9104 (C:\My Project\java\todo_app\target\classes started by Digidinos in C:\My Project\java\todo_app)
+2026-02-26T09:28:43.949+07:00  INFO 9104 --- [todo_app] [main] c.example.todo_app.TodoAppApplication    : No active profile set, falling back to 1 default profile: "default"
+2026-02-26T09:28:45.980+07:00  INFO 9104 --- [todo_app] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-02-26T09:28:46.116+07:00  INFO 9104 --- [todo_app] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 119 ms. Found 2 JPA repository interfaces.
+2026-02-26T09:28:47.537+07:00  INFO 9104 --- [todo_app] [main] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 8080 (http)
+2026-02-26T09:28:47.556+07:00  INFO 9104 --- [todo_app] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-02-26T09:28:47.561+07:00  INFO 9104 --- [todo_app] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.18]
+2026-02-26T09:28:47.725+07:00  INFO 9104 --- [todo_app] [main] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 3651 ms
+2026-02-26T09:28:48.065+07:00  INFO 9104 --- [todo_app] [main] org.hibernate.orm.jpa                    : HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-02-26T09:28:48.174+07:00  INFO 9104 --- [todo_app] [main] org.hibernate.orm.core                   : HHH000001: Hibernate ORM core version 7.2.4.Final
+2026-02-26T09:28:49.030+07:00  INFO 9104 --- [todo_app] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-02-26T09:28:49.148+07:00  INFO 9104 --- [todo_app] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-02-26T09:28:49.748+07:00  INFO 9104 --- [todo_app] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@7a34505a
+2026-02-26T09:28:49.750+07:00  INFO 9104 --- [todo_app] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-02-26T09:28:49.905+07:00  INFO 9104 --- [todo_app] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
 	Database JDBC URL [jdbc:mysql://localhost:3306/todo_app]
 	Database driver: MySQL Connector/J
 	Database dialect: MySQLDialect
@@ -204,33 +101,38 @@ org.springframework.security.oauth2.jwt.JwtEncodingException: An error occurred 
 	Pool: DataSourceConnectionProvider
 	Minimum pool size: undefined/unknown
 	Maximum pool size: undefined/unknown
-2026-02-24T16:47:02.204+07:00  INFO 16320 --- [todo_app] [main] org.hibernate.orm.core                   : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2026-02-24T16:47:02.329+07:00  INFO 16320 --- [todo_app] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2026-02-24T16:47:02.550+07:00  INFO 16320 --- [todo_app] [main] o.s.d.j.r.query.QueryEnhancerFactories   : Hibernate is in classpath; If applicable, HQL parser will be used.
-2026-02-24T16:47:03.022+07:00  INFO 16320 --- [todo_app] [main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name customUserDetailsService
-2026-02-24T16:47:03.163+07:00  WARN 16320 --- [todo_app] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2026-02-24T16:47:04.291+07:00  INFO 16320 --- [todo_app] [main] o.s.boot.tomcat.TomcatWebServer          : Tomcat started on port 8080 (http) with context path '/'
-2026-02-24T16:47:04.303+07:00  INFO 16320 --- [todo_app] [main] c.example.todo_app.TodoAppApplication    : Started TodoAppApplication in 10.947 seconds (process running for 12.469)
-2026-02-24T16:47:05.247+07:00  INFO 16320 --- [todo_app] [main] c.e.t.module.User.seeder.UserSeeder      : Users already exist. Skipping seeding.
-2026-02-24T16:47:05.267+07:00  INFO 16320 --- [todo_app] [main] c.e.t.module.Task.seeder.TaskSeeder      : Tasks already exist. Skipping seeding.
-2026-02-24T16:47:08.176+07:00  INFO 16320 --- [todo_app] [http-nio-8080-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2026-02-24T16:47:08.179+07:00  INFO 16320 --- [todo_app] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2026-02-24T16:47:08.184+07:00  INFO 16320 --- [todo_app] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 4 ms
-2026-02-24T16:48:45.725+07:00  INFO 14260 --- [todo_app] [main] c.example.todo_app.TodoAppApplication    : Starting TodoAppApplication using Java 17.0.12 with PID 14260 (C:\My Project\java\todo_app\target\classes started by Digidinos in C:\My Project\java\todo_app)
-2026-02-24T16:48:45.733+07:00  INFO 14260 --- [todo_app] [main] c.example.todo_app.TodoAppApplication    : No active profile set, falling back to 1 default profile: "default"
-2026-02-24T16:48:47.613+07:00  INFO 14260 --- [todo_app] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2026-02-24T16:48:47.782+07:00  INFO 14260 --- [todo_app] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 143 ms. Found 2 JPA repository interfaces.
-2026-02-24T16:48:49.260+07:00  INFO 14260 --- [todo_app] [main] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 8080 (http)
-2026-02-24T16:48:49.282+07:00  INFO 14260 --- [todo_app] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2026-02-24T16:48:49.283+07:00  INFO 14260 --- [todo_app] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.18]
-2026-02-24T16:48:49.405+07:00  INFO 14260 --- [todo_app] [main] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 3506 ms
-2026-02-24T16:48:49.839+07:00  INFO 14260 --- [todo_app] [main] org.hibernate.orm.jpa                    : HHH008540: Processing PersistenceUnitInfo [name: default]
-2026-02-24T16:48:49.976+07:00  INFO 14260 --- [todo_app] [main] org.hibernate.orm.core                   : HHH000001: Hibernate ORM core version 7.2.4.Final
-2026-02-24T16:48:51.310+07:00  INFO 14260 --- [todo_app] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2026-02-24T16:48:51.382+07:00  INFO 14260 --- [todo_app] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2026-02-24T16:48:51.966+07:00  INFO 14260 --- [todo_app] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@46fb9581
-2026-02-24T16:48:51.970+07:00  INFO 14260 --- [todo_app] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2026-02-24T16:48:52.159+07:00  INFO 14260 --- [todo_app] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+2026-02-26T09:28:51.649+07:00  INFO 9104 --- [todo_app] [main] org.hibernate.orm.core                   : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-02-26T09:28:51.855+07:00  INFO 9104 --- [todo_app] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-02-26T09:28:52.080+07:00  INFO 9104 --- [todo_app] [main] o.s.d.j.r.query.QueryEnhancerFactories   : Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-02-26T09:28:52.716+07:00  INFO 9104 --- [todo_app] [main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name customUserDetailsService
+2026-02-26T09:28:53.002+07:00  WARN 9104 --- [todo_app] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-02-26T09:28:54.693+07:00  INFO 9104 --- [todo_app] [main] o.s.boot.tomcat.TomcatWebServer          : Tomcat started on port 8080 (http) with context path '/'
+2026-02-26T09:28:54.723+07:00  INFO 9104 --- [todo_app] [main] c.example.todo_app.TodoAppApplication    : Started TodoAppApplication in 11.804 seconds (process running for 13.121)
+2026-02-26T09:28:55.658+07:00  INFO 9104 --- [todo_app] [main] c.e.t.module.User.seeder.UserSeeder      : Users already exist. Skipping seeding.
+2026-02-26T09:28:55.669+07:00  INFO 9104 --- [todo_app] [main] c.e.t.module.Task.seeder.TaskSeeder      : Tasks already exist. Skipping seeding.
+2026-02-26T09:28:55.671+07:00  WARN 9104 --- [todo_app] [main] o.s.core.events.SpringDocAppInitializer  : SpringDoc /v3/api-docs endpoint is enabled by default. To disable it in production, set the property 'springdoc.api-docs.enabled=false'
+2026-02-26T09:28:55.673+07:00  WARN 9104 --- [todo_app] [main] o.s.core.events.SpringDocAppInitializer  : SpringDoc /swagger-ui.html endpoint is enabled by default. To disable it in production, set the property 'springdoc.swagger-ui.enabled=false'
+2026-02-26T09:29:03.895+07:00  INFO 9104 --- [todo_app] [http-nio-8080-exec-1] o.apache.tomcat.util.http.parser.Cookie  : A cookie header was received [g_state={"i_l":0,"i_ll":1772005022287,"i_e":{"enable_itp_optimization":16},"i_b":"ZgqmzpyBSrg9t4QSqGE68w0E0kX7MoQDnsS4F+QM1EU"}] that contained an invalid cookie. That cookie will be ignored.
+ Note: further occurrences of this error will be logged at DEBUG level.
+2026-02-26T09:29:03.904+07:00  INFO 9104 --- [todo_app] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-02-26T09:29:03.908+07:00  INFO 9104 --- [todo_app] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-02-26T09:29:03.912+07:00  INFO 9104 --- [todo_app] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2026-02-26T09:29:05.648+07:00  INFO 9104 --- [todo_app] [http-nio-8080-exec-10] o.springdoc.api.AbstractOpenApiResource  : Init duration for springdoc-openapi is: 829 ms
+2026-02-26T09:33:32.704+07:00  INFO 14588 --- [todo_app] [main] c.example.todo_app.TodoAppApplication    : Starting TodoAppApplication using Java 17.0.12 with PID 14588 (C:\My Project\java\todo_app\target\classes started by Digidinos in C:\My Project\java\todo_app)
+2026-02-26T09:33:32.712+07:00  INFO 14588 --- [todo_app] [main] c.example.todo_app.TodoAppApplication    : No active profile set, falling back to 1 default profile: "default"
+2026-02-26T09:33:34.588+07:00  INFO 14588 --- [todo_app] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-02-26T09:33:34.747+07:00  INFO 14588 --- [todo_app] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 144 ms. Found 2 JPA repository interfaces.
+2026-02-26T09:33:35.926+07:00  INFO 14588 --- [todo_app] [main] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 8080 (http)
+2026-02-26T09:33:35.963+07:00  INFO 14588 --- [todo_app] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-02-26T09:33:35.966+07:00  INFO 14588 --- [todo_app] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.18]
+2026-02-26T09:33:36.138+07:00  INFO 14588 --- [todo_app] [main] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 3326 ms
+2026-02-26T09:33:36.505+07:00  INFO 14588 --- [todo_app] [main] org.hibernate.orm.jpa                    : HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-02-26T09:33:36.615+07:00  INFO 14588 --- [todo_app] [main] org.hibernate.orm.core                   : HHH000001: Hibernate ORM core version 7.2.4.Final
+2026-02-26T09:33:37.772+07:00  INFO 14588 --- [todo_app] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-02-26T09:33:37.842+07:00  INFO 14588 --- [todo_app] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-02-26T09:33:38.320+07:00  INFO 14588 --- [todo_app] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@4c418496
+2026-02-26T09:33:38.324+07:00  INFO 14588 --- [todo_app] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-02-26T09:33:38.492+07:00  INFO 14588 --- [todo_app] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
 	Database JDBC URL [jdbc:mysql://localhost:3306/todo_app]
 	Database driver: MySQL Connector/J
 	Database dialect: MySQLDialect
@@ -242,82 +144,20 @@ org.springframework.security.oauth2.jwt.JwtEncodingException: An error occurred 
 	Pool: DataSourceConnectionProvider
 	Minimum pool size: undefined/unknown
 	Maximum pool size: undefined/unknown
-2026-02-24T16:48:54.214+07:00  INFO 14260 --- [todo_app] [main] org.hibernate.orm.core                   : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2026-02-24T16:48:54.334+07:00  INFO 14260 --- [todo_app] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2026-02-24T16:48:54.490+07:00  INFO 14260 --- [todo_app] [main] o.s.d.j.r.query.QueryEnhancerFactories   : Hibernate is in classpath; If applicable, HQL parser will be used.
-2026-02-24T16:48:54.919+07:00  INFO 14260 --- [todo_app] [main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name customUserDetailsService
-2026-02-24T16:48:55.051+07:00  WARN 14260 --- [todo_app] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2026-02-24T16:48:56.333+07:00  INFO 14260 --- [todo_app] [main] o.s.boot.tomcat.TomcatWebServer          : Tomcat started on port 8080 (http) with context path '/'
-2026-02-24T16:48:56.346+07:00  INFO 14260 --- [todo_app] [main] c.example.todo_app.TodoAppApplication    : Started TodoAppApplication in 11.804 seconds (process running for 13.188)
-2026-02-24T16:48:57.113+07:00  INFO 14260 --- [todo_app] [main] c.e.t.module.User.seeder.UserSeeder      : Users already exist. Skipping seeding.
-2026-02-24T16:48:57.138+07:00  INFO 14260 --- [todo_app] [main] c.e.t.module.Task.seeder.TaskSeeder      : Tasks already exist. Skipping seeding.
-2026-02-24T16:49:00.701+07:00  INFO 14260 --- [todo_app] [http-nio-8080-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2026-02-24T16:49:00.709+07:00  INFO 14260 --- [todo_app] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2026-02-24T16:49:00.714+07:00  INFO 14260 --- [todo_app] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
-2026-02-24T17:13:50.749+07:00  INFO 15872 --- [todo_app] [main] c.example.todo_app.TodoAppApplication    : Starting TodoAppApplication using Java 17.0.12 with PID 15872 (C:\My Project\java\todo_app\target\classes started by Digidinos in C:\My Project\java\todo_app)
-2026-02-24T17:13:50.791+07:00  INFO 15872 --- [todo_app] [main] c.example.todo_app.TodoAppApplication    : No active profile set, falling back to 1 default profile: "default"
-2026-02-24T17:13:52.162+07:00  WARN 15872 --- [todo_app] [main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.parsing.BeanDefinitionParsingException: Configuration problem: @Bean method 'secretKey' must not be private or final; change the method's modifiers to continue.
-Offending resource: class path resource [com/example/todo_app/config/SecurityConfig.class]
-2026-02-24T17:13:52.176+07:00  INFO 15872 --- [todo_app] [main] .s.b.a.l.ConditionEvaluationReportLogger : 
-
-Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
-2026-02-24T17:13:52.245+07:00 ERROR 15872 --- [todo_app] [main] o.s.boot.SpringApplication               : Application run failed
-
-org.springframework.beans.factory.parsing.BeanDefinitionParsingException: Configuration problem: @Bean method 'secretKey' must not be private or final; change the method's modifiers to continue.
-Offending resource: class path resource [com/example/todo_app/config/SecurityConfig.class]
-	at org.springframework.beans.factory.parsing.FailFastProblemReporter.error(FailFastProblemReporter.java:71) ~[spring-beans-7.0.5.jar:7.0.5]
-	at org.springframework.context.annotation.BeanMethod.validate(BeanMethod.java:70) ~[spring-context-7.0.5.jar:7.0.5]
-	at org.springframework.context.annotation.ConfigurationClass.validate(ConfigurationClass.java:255) ~[spring-context-7.0.5.jar:7.0.5]
-	at org.springframework.context.annotation.ConfigurationClassParser.validate(ConfigurationClassParser.java:230) ~[spring-context-7.0.5.jar:7.0.5]
-	at org.springframework.context.annotation.ConfigurationClassPostProcessor.processConfigBeanDefinitions(ConfigurationClassPostProcessor.java:447) ~[spring-context-7.0.5.jar:7.0.5]
-	at org.springframework.context.annotation.ConfigurationClassPostProcessor.postProcessBeanDefinitionRegistry(ConfigurationClassPostProcessor.java:310) ~[spring-context-7.0.5.jar:7.0.5]
-	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanDefinitionRegistryPostProcessors(PostProcessorRegistrationDelegate.java:349) ~[spring-context-7.0.5.jar:7.0.5]
-	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanFactoryPostProcessors(PostProcessorRegistrationDelegate.java:118) ~[spring-context-7.0.5.jar:7.0.5]
-	at org.springframework.context.support.AbstractApplicationContext.invokeBeanFactoryPostProcessors(AbstractApplicationContext.java:795) ~[spring-context-7.0.5.jar:7.0.5]
-	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:603) ~[spring-context-7.0.5.jar:7.0.5]
-	at org.springframework.boot.web.server.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:143) ~[spring-boot-web-server-4.0.3.jar:4.0.3]
-	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:756) ~[spring-boot-4.0.3.jar:4.0.3]
-	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:445) ~[spring-boot-4.0.3.jar:4.0.3]
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:321) ~[spring-boot-4.0.3.jar:4.0.3]
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1365) ~[spring-boot-4.0.3.jar:4.0.3]
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1354) ~[spring-boot-4.0.3.jar:4.0.3]
-	at com.example.todo_app.TodoAppApplication.main(TodoAppApplication.java:10) ~[classes/:na]
-
-2026-02-24T17:14:48.153+07:00  INFO 16380 --- [todo_app] [main] c.example.todo_app.TodoAppApplication    : Starting TodoAppApplication using Java 17.0.12 with PID 16380 (C:\My Project\java\todo_app\target\classes started by Digidinos in C:\My Project\java\todo_app)
-2026-02-24T17:14:48.160+07:00  INFO 16380 --- [todo_app] [main] c.example.todo_app.TodoAppApplication    : No active profile set, falling back to 1 default profile: "default"
-2026-02-24T17:14:49.407+07:00  INFO 16380 --- [todo_app] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2026-02-24T17:14:49.548+07:00  INFO 16380 --- [todo_app] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 109 ms. Found 2 JPA repository interfaces.
-2026-02-24T17:14:50.483+07:00  INFO 16380 --- [todo_app] [main] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 8080 (http)
-2026-02-24T17:14:50.519+07:00  INFO 16380 --- [todo_app] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2026-02-24T17:14:50.520+07:00  INFO 16380 --- [todo_app] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.18]
-2026-02-24T17:14:50.642+07:00  INFO 16380 --- [todo_app] [main] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 2385 ms
-2026-02-24T17:14:50.988+07:00  INFO 16380 --- [todo_app] [main] org.hibernate.orm.jpa                    : HHH008540: Processing PersistenceUnitInfo [name: default]
-2026-02-24T17:14:51.083+07:00  INFO 16380 --- [todo_app] [main] org.hibernate.orm.core                   : HHH000001: Hibernate ORM core version 7.2.4.Final
-2026-02-24T17:14:51.893+07:00  INFO 16380 --- [todo_app] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2026-02-24T17:14:51.960+07:00  INFO 16380 --- [todo_app] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2026-02-24T17:14:52.475+07:00  INFO 16380 --- [todo_app] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@46fb9581
-2026-02-24T17:14:52.479+07:00  INFO 16380 --- [todo_app] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2026-02-24T17:14:52.704+07:00  INFO 16380 --- [todo_app] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
-	Database JDBC URL [jdbc:mysql://localhost:3306/todo_app]
-	Database driver: MySQL Connector/J
-	Database dialect: MySQLDialect
-	Database version: 8.0.44
-	Default catalog/schema: todo_app/undefined
-	Autocommit mode: undefined/unknown
-	Isolation level: REPEATABLE_READ [default REPEATABLE_READ]
-	JDBC fetch size: none
-	Pool: DataSourceConnectionProvider
-	Minimum pool size: undefined/unknown
-	Maximum pool size: undefined/unknown
-2026-02-24T17:14:54.189+07:00  INFO 16380 --- [todo_app] [main] org.hibernate.orm.core                   : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2026-02-24T17:14:54.290+07:00  INFO 16380 --- [todo_app] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2026-02-24T17:14:54.420+07:00  INFO 16380 --- [todo_app] [main] o.s.d.j.r.query.QueryEnhancerFactories   : Hibernate is in classpath; If applicable, HQL parser will be used.
-2026-02-24T17:14:54.790+07:00  INFO 16380 --- [todo_app] [main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name customUserDetailsService
-2026-02-24T17:14:54.900+07:00  WARN 16380 --- [todo_app] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2026-02-24T17:14:55.797+07:00  INFO 16380 --- [todo_app] [main] o.s.boot.tomcat.TomcatWebServer          : Tomcat started on port 8080 (http) with context path '/'
-2026-02-24T17:14:55.807+07:00  INFO 16380 --- [todo_app] [main] c.example.todo_app.TodoAppApplication    : Started TodoAppApplication in 8.597 seconds (process running for 9.668)
-2026-02-24T17:14:56.375+07:00  INFO 16380 --- [todo_app] [main] c.e.t.module.User.seeder.UserSeeder      : Users already exist. Skipping seeding.
-2026-02-24T17:14:56.384+07:00  INFO 16380 --- [todo_app] [main] c.e.t.module.Task.seeder.TaskSeeder      : Tasks already exist. Skipping seeding.
-2026-02-24T17:15:12.149+07:00  INFO 16380 --- [todo_app] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2026-02-24T17:15:12.150+07:00  INFO 16380 --- [todo_app] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2026-02-24T17:15:12.154+07:00  INFO 16380 --- [todo_app] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2026-02-26T09:33:40.032+07:00  INFO 14588 --- [todo_app] [main] org.hibernate.orm.core                   : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-02-26T09:33:40.144+07:00  INFO 14588 --- [todo_app] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-02-26T09:33:40.300+07:00  INFO 14588 --- [todo_app] [main] o.s.d.j.r.query.QueryEnhancerFactories   : Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-02-26T09:33:41.040+07:00  INFO 14588 --- [todo_app] [main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name customUserDetailsService
+2026-02-26T09:33:41.302+07:00  WARN 14588 --- [todo_app] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-02-26T09:33:42.896+07:00  INFO 14588 --- [todo_app] [main] o.s.boot.tomcat.TomcatWebServer          : Tomcat started on port 8080 (http) with context path '/'
+2026-02-26T09:33:42.916+07:00  INFO 14588 --- [todo_app] [main] c.example.todo_app.TodoAppApplication    : Started TodoAppApplication in 11.241 seconds (process running for 12.631)
+2026-02-26T09:33:43.538+07:00  INFO 14588 --- [todo_app] [main] c.e.t.module.User.seeder.UserSeeder      : Users already exist. Skipping seeding.
+2026-02-26T09:33:43.555+07:00  INFO 14588 --- [todo_app] [main] c.e.t.module.Task.seeder.TaskSeeder      : Tasks already exist. Skipping seeding.
+2026-02-26T09:33:43.560+07:00  WARN 14588 --- [todo_app] [main] o.s.core.events.SpringDocAppInitializer  : SpringDoc /v3/api-docs endpoint is enabled by default. To disable it in production, set the property 'springdoc.api-docs.enabled=false'
+2026-02-26T09:33:43.562+07:00  WARN 14588 --- [todo_app] [main] o.s.core.events.SpringDocAppInitializer  : SpringDoc /swagger-ui.html endpoint is enabled by default. To disable it in production, set the property 'springdoc.swagger-ui.enabled=false'
+2026-02-26T09:33:50.303+07:00  INFO 14588 --- [todo_app] [http-nio-8080-exec-1] o.apache.tomcat.util.http.parser.Cookie  : A cookie header was received [g_state={"i_l":0,"i_ll":1772005022287,"i_e":{"enable_itp_optimization":16},"i_b":"ZgqmzpyBSrg9t4QSqGE68w0E0kX7MoQDnsS4F+QM1EU"}] that contained an invalid cookie. That cookie will be ignored.
+ Note: further occurrences of this error will be logged at DEBUG level.
+2026-02-26T09:33:50.311+07:00  INFO 14588 --- [todo_app] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-02-26T09:33:50.312+07:00  INFO 14588 --- [todo_app] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-02-26T09:33:50.318+07:00  INFO 14588 --- [todo_app] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 5 ms
+2026-02-26T09:33:51.870+07:00  INFO 14588 --- [todo_app] [http-nio-8080-exec-9] o.springdoc.api.AbstractOpenApiResource  : Init duration for springdoc-openapi is: 914 ms
