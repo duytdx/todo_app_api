@@ -23,7 +23,8 @@ public class AuthController {
     private final JwtEncoder jwtEncoder;
     private final UserRepositories userRepositories;
 
-    public AuthController(AuthenticationManager authenticationManager, JwtEncoder jwtEncoder, UserRepositories userRepositories) {
+    public AuthController(AuthenticationManager authenticationManager, JwtEncoder jwtEncoder,
+            UserRepositories userRepositories) {
         this.authenticationManager = authenticationManager;
         this.jwtEncoder = jwtEncoder;
         this.userRepositories = userRepositories;
@@ -31,6 +32,7 @@ public class AuthController {
 
     public record LoginRequest(String username, String password) {
     }
+
     public record ResponseToken(String token) {
     }
 
@@ -38,15 +40,15 @@ public class AuthController {
     public ResponseToken login(@RequestBody LoginRequest request) {
         try {
             Authentication authentication = authenticationManager.authenticate(
-                    new UsernamePasswordAuthenticationToken(request.username(), request.password())
-            );
+                    new UsernamePasswordAuthenticationToken(request.username(), request.password()));
 
             User user = userRepositories.findByUsername(authentication.getName())
                     .orElseThrow(() -> new RuntimeException("User not found"));
 
             String role = authentication.getAuthorities().stream()
                     .findFirst()
-                    .map(grantedAuthority -> grantedAuthority.getAuthority())
+                    .map(grantedAuthority -> grantedAuthority
+                            .getAuthority())
                     .orElse("USER");
 
             JwsHeader jwsHeader = JwsHeader.with(MacAlgorithm.HS256).build();
@@ -61,7 +63,8 @@ public class AuthController {
             String token = jwtEncoder.encode(JwtEncoderParameters.from(jwsHeader, claims)).getTokenValue();
             return new ResponseToken(token);
         } catch (org.springframework.security.authentication.BadCredentialsException e) {
-            throw new org.springframework.security.authentication.BadCredentialsException("Invalid username or password");
+            throw new org.springframework.security.authentication.BadCredentialsException(
+                    "Invalid username or password");
         } catch (Exception e) {
             throw new RuntimeException("Authentication failed: " + e.getMessage(), e);
         }

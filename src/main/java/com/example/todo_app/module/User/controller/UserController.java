@@ -1,7 +1,5 @@
 package com.example.todo_app.module.User.controller;
 
-import java.util.List;
-
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.web.PageableDefault;
@@ -13,6 +11,7 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import org.springdoc.core.annotations.ParameterObject;
 
 import com.example.todo_app.module.User.dto.CreateUserRequest;
 import com.example.todo_app.module.User.dto.UpdateUserRequest;
@@ -32,7 +31,7 @@ public class UserController {
     }
 
     @GetMapping("/")
-    public Page<User> getAllUsers(@PageableDefault(size = 10) Pageable pageable) {
+    public Page<User> getAllUsers(@ParameterObject @PageableDefault(size = 10) Pageable pageable) {
         try {
             return userService.getAllUsers(pageable);
         } catch (Exception e) {
